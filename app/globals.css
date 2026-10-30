@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0c0c0f;
+  color: #ffffff;
+}
+
+/* Subtle text glow */
+.neon-text {
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7;
+}
+
+.neon-border-green {
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 10px #00ff88, inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+.neon-border-purple {
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 10px #a855f7, inset 0 0 10px rgba(168, 85, 247, 0.1);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  transition: all 0.2s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+  transform: translateY(-2px);
+}
+
+.neon-button {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  transition: all 0.2s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+  transform: translateY(-2px);
+}
+
+.neon-button-outline {
+  background: transparent;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  transition: all 0.2s ease;
+}
+
+.neon-button-outline:hover {
+  background: rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+/* Animated background grid */
+.grid-background {
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Mobile menu animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.2s ease-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-100px) translateX(50px); }
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  canvas {
+    touch-action: none;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 8px #00ff88, 0 0 15px #00ff88;
+  }
+
+  .neon-border-green {
+    border-width: 1px;
+    box-shadow: 0 0 8px #00ff88, inset 0 0 8px rgba(0, 255, 136, 0.1);
+  }
+
+  .neon-border-purple {
+    border-width: 1px;
+    box-shadow: 0 0 8px #a855f7, inset 0 0 8px rgba(168, 85, 247, 0.1);
+  }
+}
+
+/* Card styles */
+.game-card {
+  background: linear-gradient(135deg, rgba(20, 20, 25, 0.9) 0%, rgba(15, 15, 20, 0.9) 100%);
+  border-radius: 16px;
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.game-card:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 255, 136, 0.2);
+}
+
+/* Whale mode special */
+.whale-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 140, 0, 0.1) 100%);
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.whale-card:hover {
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+canvas {
+  display: block;
+  background: #000;
+}
+
+.neon-glow {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5),
+              0 0 20px rgba(0, 255, 0, 0.3),
+              0 0 30px rgba(0, 255, 0, 0.2);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8),
+               0 0 20px rgba(0, 255, 0, 0.6),
+               0 0 30px rgba(0, 255, 0, 0.4);
+}
+
+
+/* Glow effects */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
